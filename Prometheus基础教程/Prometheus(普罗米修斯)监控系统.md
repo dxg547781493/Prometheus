@@ -386,9 +386,57 @@ Grafana是一个开源的度量分析和可视化工具，可以通过将采集�
 
 2. 通过浏览器访问http://grafana服务器ip:3000就到了登录界面，默认用户admin/admin
 
+3. 把prometheus服务器收集到的数据作为一个数据源添加到grafana, 让grafana可以的到prometheus的数据。
+
+   第一步：点击齿轮图标，然后点击Add data source 按钮
+
+   ![grafana_datasource_prometheus_1](media/grafana_datasource_prometheus_1.png)
+
+   第二步：选择Prometheus数据源
+
+   ​	![grafana_datasource_prometheus_2](F:\MyGitRepo\Prometheus\Prometheus基础教程\media\grafana_datasource_prometheus_2.png)
+
+   第三步：设置数据源码名称和URL
+
+   ​	![grafana_datasource_prometheus_3](F:\MyGitRepo\Prometheus\Prometheus基础教程\media\grafana_datasource_prometheus_3.png)
+
+   第四步：单击齿轮图标，查看是否添加成功
+
+   ​		![grafana_datasource_prometheus_4](F:\MyGitRepo\Prometheus\Prometheus基础教程\media\grafana_datasource_prometheus_4.png)
+
+   
 
 
 
+### 3、Grafana图形显示MySQL监控数据
 
+1. 在Grafana上修改配置文件，并下载安装mysql监控的dashboard
 
+   参考网址: https://github.com/percona/grafana-dashboards
+
+   ```powershell
+   在grafana配置文件里最后加上以下三行
+   # vim /etc/grafana/grafana.ini
+   [dashboards.json]
+   enable = true
+   path = /var/lib/grafana/dashboards
+   
+   # cd /var/lib/grafana/
+   # git clone https://github.com/percona/grafana-dashboards.git
+   # cp -r grafana-dashboards/dashboards/ /var/lib/grafana/
+   重启grafana服务
+   # systemctl restart grafana-server
+   ```
+
+2. 在grafana图像界面导入相关的json文件
+
+   第一步：点击+号 --》点击import，打开上传页面
+
+   第二步：点击 “Upload .json File” 按钮，选择 “/var/lib/grafana/dashboards/” 目录下相关的json文件
+
+   第三步：选择 "/var/lib/grafana/dashboards/MySQL_Overview.json"导入，然后点击 “Import”按钮
+
+   第四步：点击 “Import” 按钮导入后，报Prometheus数据源找不到，因为这几json文件里默认要找的数据源叫Prometheus
+
+3. 
 
