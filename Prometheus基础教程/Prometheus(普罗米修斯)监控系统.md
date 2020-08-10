@@ -438,5 +438,5 @@ Grafana是一个开源的度量分析和可视化工具，可以通过将采集�
 
    第四步：点击 “Import” 按钮导入后，报Prometheus数据源找不到，因为这几json文件里默认要找的数据源叫Prometheus
 
-3. 1
+3. 
 
