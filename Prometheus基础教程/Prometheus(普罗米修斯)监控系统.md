@@ -394,15 +394,15 @@ Grafana是一个开源的度量分析和可视化工具，可以通过将采集�
 
    第二步：选择Prometheus数据源
 
-   ​	![grafana_datasource_prometheus_2](F:\MyGitRepo\Prometheus\Prometheus基础教程\media\grafana_datasource_prometheus_2.png)
+   ​	![grafana_datasource_prometheus_2](media/grafana_datasource_prometheus_2.png)
 
    第三步：设置数据源码名称和URL
 
-   ​	![grafana_datasource_prometheus_3](F:\MyGitRepo\Prometheus\Prometheus基础教程\media\grafana_datasource_prometheus_3.png)
+   ​	![grafana_datasource_prometheus_3](media/grafana_datasource_prometheus_3.png)
 
    第四步：单击齿轮图标，查看是否添加成功
 
-   ​		![grafana_datasource_prometheus_4](F:\MyGitRepo\Prometheus\Prometheus基础教程\media\grafana_datasource_prometheus_4.png)
+   ​		![grafana_datasource_prometheus_4](media/grafana_datasource_prometheus_4.png)
 
    
 
