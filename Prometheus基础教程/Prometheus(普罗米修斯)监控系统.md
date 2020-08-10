@@ -232,7 +232,7 @@ https://prometheus.io/download/
 
 ### 3、prometheus界面
 
-![prometheus_web](media\prometheus_web.png)
+![prometheus_web](media/prometheus_web.png)
 
 ### 4、主机数据展示
 
@@ -242,7 +242,7 @@ https://prometheus.io/download/
 
 在web见面可以通过关键字查询监控项
 
-![prometheus_graph](media\prometheus_graph.png)
+![prometheus_graph](media/prometheus_graph.png)
 
 ### 5、监控远程linux
 
