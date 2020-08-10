@@ -318,7 +318,7 @@ go_goroutines 10
 # systemctl enable mariadb
 # mysql
 
-mysql> grant select,replication client,process ON *.* to 'mysql_monitor'@'localhost' indentified by '口令';
+mysql> grant select,replication client,process ON *.* to 'mysql_monitor'@'localhost' identified by '口令';
 (注意：授权ip为localhost，因为不是prometheus服务器直接找mariadb获取数据，而是prometheus服务器找mysqld_exporter, mysqld_exporter再找mariadb，所以这个localhost是指的mysqld_exporter的IP)
 
 mysql> flush privileges;
@@ -361,4 +361,34 @@ password=口令
 
 ## 四、Grafana可视化图形工具
 
-dsf
+### 1、什么是Grafana
+
+Grafana是一个开源的度量分析和可视化工具，可以通过将采集的数据分析，查询，然后进行可视化的展示，并实现报警。
+
+网址：https://grafana.com
+
+### 2、使用Grafana连接Prometheus
+
+1. 在grafana服务器上安装grafana
+
+   下载地址：https://grafana.com/grafana/download
+
+   ```powershell
+   使用rpm包，下载后直接rpm -ivh 安装就ok（也可通过yum装 # yum install grafana-5.3.4-1.x86_64.rpm -y）
+   # rpm -ivh /root/grafana-5.3.4-1.x86_64.rpm
+   启动服务
+   # systemctl start grafana-server
+   开机启动
+   # systemctl enable grafana-server
+   确认端口（3000）
+   lsof -i:3000
+   ```
+
+2. 通过浏览器访问http://grafana服务器ip:3000就到了登录界面，默认用户admin/admin
+
+
+
+
+
+
+
